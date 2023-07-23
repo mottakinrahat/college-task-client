@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../authProvider/AuthProviders';
 
 const AddCandidate = () => {
+    const{user}=useContext(AuthContext);
     const clgData = useLoaderData();
     console.log(clgData);
-    const { collegeName } = clgData;
+    const { college_name, admission_date, admission_process, college_image, events, events_details, research_details, research_history,
+        research_works, sports, sports_category_details } = clgData;
 
     const handleCandidateInfo = (e) => {
         e.preventDefault();
@@ -20,12 +23,22 @@ const AddCandidate = () => {
         const addCandidateData = {
             candidate_Name: candidateName,
             candidate_Subject: candidateSubject,
-            candidate_Email: candidateEmail,
+            email: candidateEmail,
             candidate_Number: candidateNumber,
             candidate_Address: candidateAddress,
             candidate_Birth: candidateBirth,
             candidate_Image: candidateImage,
-            college_name: collegeName
+            college_name: college_name,
+            admission_date: admission_date,
+            admission_process: admission_process,
+            events: events,
+            research_history: research_details,
+            research_details: research_details,
+            research_works: research_works,
+            sports: sports,
+            sports_category_details: sports_category_details,
+            college_image:college_image,
+
 
         }
         console.log(addCandidateData);
@@ -64,7 +77,7 @@ const AddCandidate = () => {
                                         <label className="label">
                                             <span className="label-text">Candidate Email</span>
                                         </label>
-                                        <input type="text" placeholder="add your email" name='candidateEmail' className="input input-bordered" />
+                                        <input type="text" defaultValue={user?.email} placeholder="add your email" name='candidateEmail' className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">

@@ -4,7 +4,7 @@ import { useFetcher, useLoaderData } from 'react-router-dom';
 const CollegeDetails = () => {
     const collegeData = useLoaderData();
     const { _id, admission_date, admission_process, college_image, college_name, events, events_details, research_details, research_history,
-        research_works, sports, sports_category_details, } = collegeData;
+        research_works, sports, sports_category_details } = collegeData;
     return (
         <div className='relative '>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${college_image})` }}>

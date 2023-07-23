@@ -4,7 +4,7 @@ import AddAdmission from './AddAdmisson/AddAdmission';
 const Admisson = () => {
     const [canData, setCanData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/candidateInfo')
+        fetch('http://localhost:5000/clgInfo')
             .then(res => res.json())
             .then(data => setCanData(data))
     }, [])
