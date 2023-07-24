@@ -7,7 +7,7 @@ const CollegeDetails = () => {
         research_works, sports, sports_category_details } = collegeData;
     return (
         <div className='relative '>
-            <div className="hero min-h-screen" style={{ backgroundImage: `url(${college_image})` }}>
+            <div className="hero md:min-h-screen" style={{ backgroundImage: `url(${college_image})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
@@ -17,7 +17,7 @@ const CollegeDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className='md:flex md:justify-between items-center -mt-10 px-6'>
+            <div className='md:flex md:justify-between items-center -mt-10 md:px-6'>
                 <div className="card w-96 bg-neutral bg-opacity-90 text-neutral-content">
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Event</h2>

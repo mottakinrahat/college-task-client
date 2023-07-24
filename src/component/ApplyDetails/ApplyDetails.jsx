@@ -21,7 +21,7 @@ const ApplyDetails = () => {
                 college_image:college_image
               
             }
-            fetch('http://localhost:5000/ratingreview', {
+            fetch('https://endgame-college-server.vercel.app/ratingreview', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(ratingandreview)
@@ -29,19 +29,19 @@ const ApplyDetails = () => {
         }
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img src={college_image} className="max-w-sm rounded-lg shadow-2xl" />
+            <div className="hero md:min-h-screen bg-base-200 ">
+                <div className="md:hero-content flex-col lg:flex-row md:text-center">
+                    
                     <div>
                         <h1 className="text-3xl font-bold">{college_name}</h1>
-                        <p className="py-2"><span>Admission Date:</span> {admission_date}</p>
-                        <p className="py-2"><span>Admission Process:</span> {admission_process}</p>
-                        <p className="py-2"><span>Events:</span> {events}</p>
-                        <p className="py-2"><span>Research History:</span> {research_history}</p>
-                        <p className="py-2"><span>Sports:</span> {sports}</p>
+                        <p className="py-2"><span className='font-semibold'>Admission Date:</span> {admission_date}</p>
+                        <p className="py-2"><span className='font-semibold'>Admission Process:</span> {admission_process}</p>
+                        <p className="py-2"><span className='font-semibold'>Events:</span> {events}</p>
+                        <p className="py-2"><span className='font-semibold'>Research History:</span> {research_history}</p>
+                        <p className="py-2"><span className='font-semibold'>Sports:</span> {sports}</p>
 
 
-                        <form onSubmit={handleReview} className='px-40'>
+                        <form onSubmit={handleReview} className='md:px-40'>
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">

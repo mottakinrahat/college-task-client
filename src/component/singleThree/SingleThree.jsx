@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleThree = ({ clg }) => {
-    console.log(clg);
     const {_id, admission_date, admission_process, college_image, college_name, events, events_details, research_details, research_history,
         research_works, sports, sports_category_details, } = clg;
     return (
@@ -15,12 +14,12 @@ const SingleThree = ({ clg }) => {
                 />
                 <div className="py-4">
                     <h2 className="text-xl font-semibold mb-2">{college_name}</h2>
-                    <p className="text-sm mb-2">Admission Date: August 2023</p>
-                    <p className="text-sm mb-2">Events: Lorem ipsum dolor sit.</p>
-                    <p className="text-sm mb-2">Research History: Lorem ipsum dolor sit.</p>
-                    <p className="text-sm mb-2">Sports: Lorem ipsum dolor sit.</p>
+                    <p className="text-sm mb-2"><span className='font-semibold'>Admission Date</span> : {admission_date}</p>
+                    <p className="text-sm mb-2"><span className='font-semibold'>Events</span> : {events}</p>
+                    <p className="text-sm mb-2"><span className='font-semibold'>Research History</span> : {research_history}</p>
+                    <p className="text-sm mb-2"><span className='font-semibold'>Sports</span> : {sports}</p>
                 </div>
-                <Link to={`/collegeDetails/${_id}`}><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md mt-2">
+                <Link to={`/collegeDetails/${_id}`}><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 w-full rounded-md mt-2">
                     Details
                 </button></Link>
             </div>

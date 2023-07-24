@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from '../../firebase/firebse.config';
 import { getFirestore, updateDoc, doc } from 'firebase/firestore';
 
@@ -32,13 +32,13 @@ const AuthProvider = ({ children }) => {
         }
 
         try {
-         
+
             await updateProfile(auth.currentUser, {
                 displayName: name,
                 photoURL: image_url,
             });
 
-            
+
             const db = getFirestore(app);
             const userDocRef = doc(db, 'users', auth.currentUser.uid);
             await updateDoc(userDocRef, {
@@ -61,6 +61,10 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, githubAuth);
     }
+    const resetPassword = (email) => {
+        setLoading(true);
+        return sendPasswordResetEmail(auth, email);
+    }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
@@ -81,7 +85,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         updateUserProfile,
         googleSignIn,
-        githubSignIn
+        githubSignIn,
+        resetPassword
     }
 
     return (

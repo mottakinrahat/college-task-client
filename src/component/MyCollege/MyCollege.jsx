@@ -7,7 +7,7 @@ const MyCollege = () => {
     const [collegeInfo, setCollegeInfo] = useState([])
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/candidateData?email=${user.email}`)
+            fetch(`https://endgame-college-server.vercel.app/candidateData?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setCollegeInfo(data))
                 .catch(error => console.error('Error fetching data:', error));
@@ -15,9 +15,9 @@ const MyCollege = () => {
     }, [user?.email]);
     return (
         <div>
-            <div className="overflow-x-auto">
+            {/* <div className="overflow-x-auto">
                 <table className="table">
-                    <thead>
+            <thead>
                         <tr>
                             <th>
                             </th>
@@ -29,16 +29,16 @@ const MyCollege = () => {
                             <th></th>
                         </tr>
                     </thead>
-                <tbody>
+                <tbody> */}
                     {
                         collegeInfo.map((college, index) => (
                             <CollegeData key={index + 1} college={college} ></CollegeData>
                         ))
                     }
-                </tbody>
+                {/* </tbody>
                 </table>
 
-            </div>
+            </div> */}
         </div>
     );
 };

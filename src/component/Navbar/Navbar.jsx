@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProviders';
-
+import logo from '../../assets/logo.png'
 
 const Navbar = () => {
     const{user,logOut}=useContext(AuthContext)
@@ -34,7 +34,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                  <img src={logo} className='w-20' alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

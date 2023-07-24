@@ -4,7 +4,7 @@ import SingleCollege from '../SingleCollege/SingleCollege';
 const College = () => {
     const [clgData, setClgData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/clgInfo')
+        fetch('https://endgame-college-server.vercel.app/clgInfo')
             .then(res => res.json())
             .then(data => setClgData(data))
     }, [])

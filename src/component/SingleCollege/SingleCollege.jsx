@@ -23,6 +23,7 @@ const SingleCollege = ({ clg }) => {
                     Details
                 </button></Link>
             </div>
+            
         </div>
     );
 };

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProviders';
-
+import admission from '../../assets/admission.json';
+import Lottie from 'lottie-react'
 const AddCandidate = () => {
     const{user}=useContext(AuthContext);
     const clgData = useLoaderData();
@@ -42,7 +43,7 @@ const AddCandidate = () => {
 
         }
         console.log(addCandidateData);
-        fetch('http://localhost:5000/candidateData', {
+        fetch('https://endgame-college-server.vercel.app/candidateData', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(addCandidateData)
@@ -54,13 +55,13 @@ const AddCandidate = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Apply now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <Lottie animationData={admission}></Lottie>
+                        <p className="py-6">Fill the form and submit for admission</p>
                     </div>
-                    <div className="card flex-shrink-0 w-1/2  shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 md:w-1/2  shadow-2xl bg-base-100">
                         <form onSubmit={handleCandidateInfo}>
                             <div className="card-body ">
-                                <div className='grid grid-cols-2 justify-between items-center gap-2'>
+                                <div className='md:grid md:grid-cols-2 justify-between items-center gap-2'>
                                     <div className="form-control ">
                                         <label className="label">
                                             <span className="label-text">Candidate Name</span>

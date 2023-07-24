@@ -4,7 +4,7 @@ const ReviewData = ({reviews}) => {
     const { candidate_Name, college_image, college_name, review } = reviews;
     return (
 
-        <div>
+        <div >
 
             <div className="card w-96 image-full">
 

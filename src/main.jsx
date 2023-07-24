@@ -19,6 +19,7 @@ import PrivateRouter from './Router/PrivateRouter.jsx';
 import MyCollege from './component/MyCollege/MyCollege.jsx';
 import ApplyDetails from './component/ApplyDetails/ApplyDetails.jsx';
 import UserProfile from './component/UserProfile/UserProfile.jsx';
+import Error from './component/Error/Error.jsx';
 
 
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
       {
         path:'collegeDetails/:id',
         element:<PrivateRouter><CollegeDetails></CollegeDetails></PrivateRouter>,
-        loader:({params})=>fetch(`http://localhost:5000/clgInfo/${params.id}`)
+        loader:({params})=>fetch(`https://endgame-college-server.vercel.app/clgInfo/${params.id}`)
       },
       {
         path:'admisson',
@@ -47,7 +49,7 @@ const router = createBrowserRouter([
       {
         path:'addcandidate/:id',
         element:<AddCandidate></AddCandidate>,
-        loader:({params})=>fetch(`http://localhost:5000/clgInfo/${params.id}`)
+        loader:({params})=>fetch(`https://endgame-college-server.vercel.app/clgInfo/${params.id}`)
       },
       {
         path:'login',
@@ -64,7 +66,7 @@ const router = createBrowserRouter([
       {
         path:'mycollege/:id',
         element:<ApplyDetails></ApplyDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/candidateData/${params.id}`)
+        loader:({params})=>fetch(`https://endgame-college-server.vercel.app/candidateData/${params.id}`)
       },
       {
         path:'userprofile',

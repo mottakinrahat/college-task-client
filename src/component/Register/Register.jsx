@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Swal from 'sweetalert2';
 import { AuthContext } from '../authProvider/AuthProviders';
@@ -9,6 +9,8 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext)
+
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate('/');
       })
       .catch((err) => {
         console.log(err.message);

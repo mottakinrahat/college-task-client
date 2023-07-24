@@ -55,7 +55,7 @@ const UserProfile = () => {
                             onClick={handleUpdate}
                             disabled={updating}
                         >
-                            Update
+                            Edit
                         </button>
                     </div>
                 </div>
