@@ -19,11 +19,11 @@ const SingleCollege = ({ clg }) => {
                     <p className="text-sm mb-2">Number of Research:3</p>
 
                 </div>
-                <Link to={`/collegeDetails/${_id}`}> <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md mt-2">
+                <Link to={`/collegeDetails/${_id}`}> <button className="bg-blue-500 w-full hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md mt-2">
                     Details
                 </button></Link>
             </div>
-            
+
         </div>
     );
 };

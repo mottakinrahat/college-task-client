@@ -15,7 +15,7 @@ const CollegeData = ({ college }) => {
                        <h2 className=''>{candidate_Number}</h2>
                        <h2 className=''>Event: {events}</h2>
                         <p className="py-6">{ research_history }</p>
-                        <Link to={`/mycollege/${_id}`}> <button className="btn btn-ghost bg-blue-700 text-white btn-xs">Add review</button></Link>
+                        <Link to={`/mycollege/${_id}`}> <button className="btn btn-ghost  bg-blue-700 text-white btn-xs">Add review</button></Link>
                     </div>
                 </div>
             </div>
